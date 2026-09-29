@@ -1,0 +1,113 @@
+/* =========================================================
+   KEO RATANAK — PORTFOLIO
+   responsive.css — breakpoints from 320px to 1920px
+   ========================================================= */
+
+/* -------------------- LARGE DESKTOP (1440px+) -------------------- */
+@media (min-width: 1440px){
+  :root{ --container: 1280px; }
+  .hero__title{ font-size: 60px; }
+}
+
+/* -------------------- DESKTOP / SMALL LAPTOP (max 1180px) -------------------- */
+@media (max-width: 1180px){
+  .services-grid{ grid-template-columns: repeat(3, 1fr); }
+}
+
+/* -------------------- TABLET LANDSCAPE (max 1024px) -------------------- */
+@media (max-width: 1024px){
+  .hero__inner{ grid-template-columns: 1fr; gap: 60px; text-align: center; }
+  .hero__desc{ margin-inline: auto; }
+  .hero__actions{ justify-content: center; }
+  .hero__stats{ justify-content: center; }
+  .hero__media{ order: -1; }
+
+  .about__grid{ grid-template-columns: 1fr; }
+  .about__bio p{ max-width: none; }
+
+  .skillbars{ grid-template-columns: 1fr; }
+  .skills__cards-grid{ grid-template-columns: 1fr 1fr; }
+
+  .project-grid{ grid-template-columns: 1fr; }
+
+  .contact__grid{ grid-template-columns: 1fr; }
+}
+
+/* -------------------- TABLET / NAV COLLAPSE (max 900px) -------------------- */
+@media (max-width: 900px){
+  .navbar__menu{
+    position: fixed;
+    top: var(--nav-h);
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    background: var(--bg-elev);
+    border-bottom: 1px solid var(--border);
+    padding: 10px 24px 20px;
+    transform: translateY(-8px);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity .3s var(--ease), transform .3s var(--ease), visibility .3s var(--ease);
+    box-shadow: var(--shadow);
+  }
+  .navbar__menu.is-open{
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+  .navbar__menu li{ width: 100%; }
+  .nav-link{ display: block; padding: 14px 0; width: 100%; border-bottom: 1px solid var(--border-soft); }
+  .navbar__menu li:last-child .nav-link{ border-bottom: none; }
+
+  .hamburger{ display: flex; }
+
+  .services-grid{ grid-template-columns: repeat(2, 1fr); }
+}
+
+/* -------------------- SMALL TABLET (max 768px) -------------------- */
+@media (max-width: 768px){
+  .section{ padding-block: 80px; }
+  .section-subtitle{ margin-bottom: 36px; }
+
+  .about__cards{ grid-template-columns: 1fr; }
+  .skills__cards-grid{ grid-template-columns: 1fr; }
+
+  .timeline{ padding-left: 26px; }
+  .timeline__dot{ left: -33px; }
+
+  .hero__stats{ gap: 28px; flex-wrap: wrap; }
+}
+
+/* -------------------- MOBILE (max 600px) -------------------- */
+@media (max-width: 600px){
+  .container{ padding-inline: 18px; }
+
+  .hero{ padding-top: calc(var(--nav-h) + 10px); }
+  .hero__inner{ padding-block: 40px 30px; }
+  .hero__title{ font-size: clamp(30px, 9vw, 40px); }
+  .hero__actions{ flex-direction: column; width: 100%; }
+  .hero__actions .btn{ width: 100%; }
+
+  .hero__photo-placeholder{ width: 78vw; }
+
+  .services-grid{ grid-template-columns: 1fr; }
+
+  .contact-form{ padding: 24px; }
+
+  .site-footer__inner{ flex-direction: column; text-align: center; }
+
+  .back-to-top{ right: 16px; bottom: 16px; width: 42px; height: 42px; }
+}
+
+/* -------------------- SMALL MOBILE (max 380px) -------------------- */
+@media (max-width: 380px){
+  .hero__title{ font-size: 28px; }
+  .hero__role{ font-size: 16px; }
+  .stat__num, .stat__plus{ font-size: 24px; }
+  .navbar__logo{ font-size: 15px; }
+  .info-card{ padding: 16px; }
+}
